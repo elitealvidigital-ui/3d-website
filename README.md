@@ -15,10 +15,22 @@ Preview URL:
 http://127.0.0.1:5173
 ```
 
+GitHub Pages URL:
+
+```text
+https://elitealvidigital-ui.github.io/3d-website/
+```
+
 Production build:
 
 ```bash
 npm run build
+```
+
+GitHub Pages build:
+
+```bash
+GITHUB_PAGES=true npm run build
 ```
 
 ## Update Price And WhatsApp
@@ -30,19 +42,7 @@ Edit `src/App.tsx`.
 
 ## Frame Assets
 
-Preferred PNG fallback path if replacing frames later:
-
-```text
-public/assets/infinity-luxeus/frames/
-```
-
-Existing original PNG frames:
-
-```text
-public/assets/infinity-luxeus/original-frames/
-```
-
-Optimized WebP frames used first by the canvas:
+Optimized WebP frames used by the canvas:
 
 ```text
 public/assets/infinity-luxeus/frames-webp/
@@ -64,7 +64,8 @@ frame_000002.webp
 frame_000240.webp
 ```
 
-The PNG fallback can also use the same names with `.png`.
+Keep the WebP sequence compact for GitHub Pages. Do not commit duplicate PNG
+frame folders unless you are intentionally moving to a different hosting setup.
 
 ## Performance Notes
 

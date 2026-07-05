@@ -26,6 +26,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
 import { FrameSequenceCanvas } from './components/FrameSequenceCanvas'
+import { publicAsset } from './lib/assets'
 
 gsap.registerPlugin(ScrollTrigger, useGSAP)
 
@@ -37,6 +38,7 @@ const LuxuryAtmosphere3D = lazy(() =>
 
 const whatsappHref =
   'https://wa.me/YOUR_WHATSAPP_NUMBER?text=I%20want%20to%20order%20Infinity%20Luxeus%20Perfume'
+const heroPosterSrc = publicAsset('assets/infinity-luxeus/preview/middle_frame.png')
 const pricePlaceholder = '₹[ADD_PRICE_HERE]'
 
 const navLinks = [
@@ -398,7 +400,7 @@ function App() {
             <section id="hero" className="story-section hero-section">
               <img
                 className="hero-product-poster"
-                src="/assets/infinity-luxeus/preview/middle_frame.png"
+                src={heroPosterSrc}
                 alt=""
                 aria-hidden="true"
               />

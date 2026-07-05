@@ -1,10 +1,11 @@
 import { useCallback, useEffect, useRef, useState, type RefObject } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { publicAsset } from '../lib/assets'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const ASSET_ROOT = '/assets/infinity-luxeus'
+const ASSET_ROOT = publicAsset('assets/infinity-luxeus')
 const WEBP_DIR = `${ASSET_ROOT}/frames-webp`
 const POSTER_SRC = `${ASSET_ROOT}/poster.png`
 const FRAME_RATE = 24
@@ -26,10 +27,7 @@ const clampFrame = (frame: number) => Math.min(FRAME_COUNT, Math.max(1, frame))
 
 const frameName = (frame: number) => `frame_${String(frame).padStart(6, '0')}`
 
-const frameSrc = (frame: number, ext: 'webp' | 'png') =>
-  ext === 'webp'
-    ? `${WEBP_DIR}/${frameName(frame)}.webp`
-    : `${WEBP_DIR}/${frameName(frame)}.webp`
+const frameSrc = (frame: number) => `${WEBP_DIR}/${frameName(frame)}.webp`
 
 const drawCover = (
   context: CanvasRenderingContext2D,
@@ -116,7 +114,7 @@ export function FrameSequenceCanvas({
           resolve(image)
         }
         image.onerror = () => reject(new Error(`Unable to load frame ${frame}`))
-        image.src = frameSrc(frame, 'webp')
+        image.src = frameSrc(frame)
       })
 
       loadCacheRef.current[frame] = load
