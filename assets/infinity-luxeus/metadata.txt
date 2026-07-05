@@ -1,0 +1,15 @@
+Infinity Luxeus Perfume — 24 FPS Frame Extraction
+
+Source video: Use_the_uploaded_image_only_as.mp4
+Extracted FPS: 24
+Resolution: 1280x720
+Source avg frame rate: 24/1
+Source duration: 10.000 seconds
+Extracted total frames: 240
+Frame naming: frames/frame_000001.png ... frames/frame_000240.png
+
+Recommended website usage:
+- Use frames as a canvas image sequence.
+- Do not render all frames as DOM images.
+- Use GSAP ScrollTrigger to map scroll progress to frame number.
+- Use first 24–48 frames preload, then lazy preload remaining frames.
